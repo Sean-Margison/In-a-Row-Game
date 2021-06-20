@@ -1,6 +1,7 @@
 # In-a-Row Game
 
 A fully responsive online multiplayer web game using new technologies.
+https://in-a-row-game.herokuapp.com/
 
 <b>Purpose</b>: To learn new technologies and services while gaining valuable experience.<br/>
  - React, Node.js, Socket.io, GitHub, Heroku
