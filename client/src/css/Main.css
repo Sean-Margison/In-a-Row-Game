@@ -1,0 +1,53 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	color: #FFF;
+	background-color: #000;
+}
+
+div, span, p, h1 {
+	user-select: none;
+}
+
+select, button {
+	cursor: pointer;
+}
+
+#logos {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px 20px;
+	z-index: 0;
+}
+
+.bg {
+	position: absolute;
+	z-index: -1;
+	background: url('https://cdn2.unrealengine.com/Diesel%2Fblog%2Fepic-games-publishing-announcement%2FEG-Publishing_YT-Assets_News_Secondary-1920x600-3493a020a205d3d43cd2fbf431a9400617a25221.jpg');
+	background-repeat: none;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	overflow: hidden;
+	transform: scale(1.1);
+	opacity: .7;
+}
+
+@media screen and (max-width:600px) {
+	#logos {
+		margin-bottom: 10px;
+		padding-right: 0;
+	}
+	#logos img {
+		width: 50px;
+	}
+	#logos img:last-child {
+		width: 32.5px;
+	}
+}
