@@ -18,7 +18,7 @@ if(deployed) {
 	app.use(express.static(path.join(__client, "build")));
 
 	// Route Request
-	app.get('/', function (req, res) {
+	app.get('*', function (req, res) {
 		res.sendFile(path.join(__client, "build", "index.html"));
 	});
 }
