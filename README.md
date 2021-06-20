@@ -1,6 +1,6 @@
 # In-a-Row Game
 
-A fully responsive online multiplayer web game using new technologies.
+A fully responsive online multiplayer web game using new technologies.<br/>
 https://in-a-row-game.herokuapp.com/
 
 <b>Purpose</b>: To learn new technologies and services while gaining valuable experience.<br/>
