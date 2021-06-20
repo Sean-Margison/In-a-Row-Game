@@ -10,3 +10,5 @@ Features:
  - Custom local games with configurable options.
  - Fully responsive design to fit any screen size.
  - React handles all interactions and rendering.
+
+NOTE: This is a code demonstration and provided for review but it will not be actively maintained.
