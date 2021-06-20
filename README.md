@@ -10,5 +10,6 @@ Features:
  - Custom local games with configurable options.
  - Fully responsive design to fit any screen size.
  - React handles all interactions and rendering.
+ - Deployed on a single Heroku instance using the react build files which are generated during deployment.
 
 NOTE: This is a code demonstration and provided for review but it will not be actively maintained.
