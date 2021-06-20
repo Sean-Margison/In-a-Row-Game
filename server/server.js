@@ -8,18 +8,18 @@ const multiplayer = require('./multiplayer');
 
 // Read env variables
 const port = process.env.PORT || '3001';
-const deployed = process.env.DEPLOYED || false;
+const prod = process.env.PRODUCTION || false;
 
 // Setup express to serve deployment build
 // Necessary for single Heroku deployment
-if(deployed) {
-	const __client = __dirname.replace("\\server", '\\client');
-	
-	app.use(express.static(path.join(__client, "build")));
+if(prod) {
+	app.enable("trust proxy");
+
+	app.use(express.static(path.join(__dirname, "/../client/build")));
 
 	// Route Request
 	app.get('*', function (req, res) {
-		res.sendFile(path.join(__client, "build", "index.html"));
+		res.sendFile(path.join(__dirname, "/../client/build", "index.html"));
 	});
 }
 
