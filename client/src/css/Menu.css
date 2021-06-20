@@ -10,6 +10,7 @@
 	width: 300px;
 	font-size: 24px;
 	z-index: 10;
+	overflow: hidden;
 }
 
 #menu h1 {
@@ -52,7 +53,7 @@
 	text-align: center;
 }
 
-#menu li>input, #menu label+div {
+#menu label+div {
 	width: 100px;
 	height: 40px;
 	font-size: 18px;
@@ -67,6 +68,15 @@
 	width: 100px;
 	padding: 0;
 	position: relative;
+}
+
+#menu .inc {
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0;
+	margin-top: 0 !important;
+	border-radius: 0 !important;
 }
 
 #menu .custom {
@@ -89,10 +99,10 @@
 }
 
 #menu .custom label {
-	width: 100px;
+	width: 120px;
 	display: inline-block;
 	text-align: left;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 #menu .custom button {
@@ -136,11 +146,15 @@
 	#menu button {
 		width: 100%;
 	}
-	#menu li>input, #menu label+div {
-		width: 80%;
-	}
 	#menu .custom label {
 		font-size: 14px;
+		width: 90px;
+	}
+	#menu .inc {
+		width: 45px;
+	}
+	#menu .custom li:nth-child(4) label {
+		width: 90px
 	}
 	#menu .custom {
 		display: flex;
@@ -154,11 +168,8 @@
 	#menu .custom>li:last-child {
 		width: 100%;
 	}
-	#menu .custom li:nth-child(4) label {
-		width: 70px
-	}
 	#menu label+div {
-		width: 109px;
+		width: 90px;
 	}
 	#multi>span:first-child {
 		display: none;
@@ -172,11 +183,39 @@
 		display: none;
 		background-color: rgba(0, 0, 0, .5);
 	}
-	#menu li>input, #menu label+div, #menu label+div, #menu .custom li:nth-child(4) label {
-		width: 100px;
+	#menu label+div, #menu .custom li:nth-child(4) label {
+		width: 120px;
 	}
 	.start #menu, .play .hamburger, .hamburger.is-active+#menu {
 		display: block;
+	}
+	#menu .custom label {
+		font-size: 18px;
+		width: 120px;
+		max-width: 50vw;
+	}
+	#menu .inc {
+		width: 60px;
+		max-width: 50%;
+	}
+	#menu .custom li:nth-child(4) label {
+		width: 120px;
+		max-width: 50vw;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#menu .custom label {
+		width: 110px;
+	}
+	#menu .inc {
+		width: 40px;
+	}
+	#menu .custom li:nth-child(4) label {
+		width: 110px;
+	}
+	#menu label+div {
+		width: 80px;
 	}
 }
 

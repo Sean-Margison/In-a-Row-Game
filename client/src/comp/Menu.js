@@ -9,15 +9,15 @@ export default class Menu extends React.Component {
 		super(props);
 
 		this.state = {
-			rows: 10,
-			cols: 10,
-			runs: 4,
+			rows: 5,
+			cols: 5,
+			runs: 3,
 			gravity: true,
 			isPlaying: false
 		}
 	}
 
-	custom(e) {
+	custom() {
 		if (this.state.cols < 0 || this.state.cols > 10) {
 			alert("Columns must be between 1 and 10");
 			return;
@@ -29,7 +29,7 @@ export default class Menu extends React.Component {
 			return;
 		}
 
-		this.changeGame(this.state.cols, this.state.rows, this.state.runs, this.state.gravity, true, e);
+		this.changeGame(this.state.cols, this.state.rows, this.state.runs, this.state.gravity);
 	}
 
 	componentDidMount() { this.init(); }
@@ -51,9 +51,9 @@ export default class Menu extends React.Component {
 		this.props.endGame(e);
 	}
 
-	changeGame(rows, cols, runs, gravity, custom, e) {
+	changeGame(rows, cols, runs, gravity, custom) {
 		this.setState({ isPlaying: true });
-		this.props.setGameMode(rows, cols, runs, gravity, custom, e);
+		this.props.setGameMode(rows, cols, runs, gravity, custom);
 
 		document.querySelector(".hamburger").classList.remove("is-active");
 		document.getElementById("menu").classList.remove("open");
@@ -72,22 +72,25 @@ export default class Menu extends React.Component {
 					<li>
 						<label id="multi" className={this.props.multiplayer ? "enabled" : "disabled"}><span>Multiplayer</span> <span>{this.props.multiplayer ? "Online" : "Offline"}</span></label>
 					</li>
-					<li><button onTouchEnd={(e) => this.changeGame(7, 6, 4, true, e)} onClick={(e) => this.changeGame(7, 6, 4, true, false)}>Connect Four</button></li>
-					<li><button onTouchEnd={(e) => this.changeGame(3, 3, 3, false, e)} onClick={(e) => this.changeGame(3, 3, 3, false, false)}>Tic-Tac-Toe</button></li>
+					<li><button onClick={(e) => this.changeGame(7, 6, 4, true)}>Connect Four</button></li>
+					<li><button onClick={(e) => this.changeGame(3, 3, 3, false)}>Tic-Tac-Toe</button></li>
 					<li>
 						<label>Local Custom</label>
 						<ul className="custom">
-							<li onChange={(e) => this.setState({ cols: e.target.value })}>
-								<label htmlFor="col">Columns</label>
-								<input type="number" name="col" min="1" max="10" defaultValue="10" title="The number of columns for the board (1-10)" />
+							<li>
+								<label htmlFor="col">Columns: {this.state.cols}</label>
+								<button className="inc" alt="Add Columns" onClick={() => this.setState({ cols: Math.min(10, this.state.cols + 1) })}>+</button>
+								<button className="inc" alt="Subtract Columns" onClick={() => this.setState({ cols: Math.max(1, this.state.cols - 1) })}>-</button>
 							</li>
-							<li onChange={(e) => this.setState({ rows: e.target.value })}>
-								<label htmlFor="row">Rows</label>
-								<input type="number" name="row" min="1" max="10" defaultValue="10" title="The number of rows for the board (1-10)" />
+							<li>
+								<label htmlFor="row">Rows: {this.state.rows}</label>
+								<button className="inc" alt="Add Rows" onClick={() => this.setState({ rows: Math.min(10, this.state.rows + 1) })}>+</button>
+								<button className="inc" alt="Subtract Rows" onClick={() => this.setState({ rows: Math.max(1, this.state.rows - 1) })}>-</button>
 							</li>
-							<li onChange={(e) => this.setState({ runs: e.target.value })}>
-								<label htmlFor="run">To Win</label>
-								<input type="number" name="run" min="2" defaultValue="4" title="The number of matches in a row to win!" />
+							<li>
+								<label htmlFor="run">To Win: {this.state.runs}</label>
+								<button className="inc" alt="Add Runs" onClick={() => this.setState({ runs: Math.min(10, this.state.runs + 1) })}>+</button>
+								<button className="inc" alt="Subtract Runs" onClick={() => this.setState({ runs: Math.max(2, this.state.runs - 1) })}>-</button>
 							</li>
 							<li>
 								<label htmlFor="checkbox">Gravity</label>
@@ -100,7 +103,7 @@ export default class Menu extends React.Component {
 								</div>
 							</li>
 							<li>
-								<button onTouchEnd={(e) => this.custom(e)} onClick={(e) => this.custom(e)}>Play Local</button>
+								<button onClick={(e) => this.custom()}>Play Local</button>
 							</li>
 						</ul>
 					</li>

@@ -61,38 +61,18 @@
 	border-top: none;
 }
 
-#board:not(.done) .col:hover {
-	cursor: pointer;
-}
-
-.gravity:not(.done) .col:hover>.cell {
-	background-color: #fff;
-}
-
 .cell>span {
 	display: block;
 	height: 100%;
 	width: 100%;
 }
 
-.cell.black, #board:not(.gravity):not(.done).black .cell.open:hover {
+.cell.black {
 	background: #000 !important;
 }
 
-.gravity .cell.black, .gravity:not(.done).black .col:hover .open:last-of-type {
-	background: #000 !important;
-}
-
-.cell.red, #board:not(.gravity):not(.done).red .cell.open:hover {
+.cell.red {
 	background: #F00 !important;
-}
-
-.gravity .cell.red, .gravity:not(.done).red .col:hover .open:last-of-type {
-	background: #F00 !important;
-}
-
-#game.multi div:not(.turn) #board.gravity .col:hover .open:last-of-type, #game.multi div:not(.turn) #board:not(.gravity) .cell.open:hover, #game.multi div:not(.turn) #board.gravity:not(.done) .col:hover>.cell.open {
-	background: #FFF !important;
 }
 
 .message {
@@ -134,8 +114,28 @@
 	font-weight: bold;
 }
 
-#game.create .message:hover {
-	backdrop-filter: blur(0);
+/* Prevent mobile hovers */
+
+@media (hover: hover) {
+	#board:not(.done) .col:hover {
+		cursor: pointer;
+	}
+	.gravity:not(.done) .col:hover>.cell {
+		background-color: #fff;
+	}
+	#board:not(.gravity):not(.done).black .cell.open:hover, .gravity:not(.done).black .col:hover .open:last-of-type {
+		background: #000 !important;
+	}
+	#board:not(.gravity):not(.done).red .cell.open:hover, .gravity:not(.done).red .col:hover .open:last-of-type {
+		background: #F00 !important;
+	}
+	#game.create .message:hover {
+		backdrop-filter: blur(0);
+	}
+}
+
+#game.multi div:not(.turn) #board.gravity .col:hover .open:last-of-type, #game.multi div:not(.turn) #board:not(.gravity) .cell.open:hover, #game.multi div:not(.turn) #board.gravity:not(.done) .col:hover>.cell.open {
+	background: #FFF !important;
 }
 
 /* START RESPONSIVE */

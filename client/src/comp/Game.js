@@ -15,7 +15,6 @@ export default class Game extends React.Component {
 			rows: 6,
 			runs: 4,
 			gravity: true,
-			isTouch: false,
 			mode: "",
 			multiplayer: {
 				socket: this.props.socket,
@@ -48,10 +47,9 @@ export default class Game extends React.Component {
 		this.setGameMode();
 	}
 
-	setGameMode(cols, rows, runs, gravity, custom, e) {
+	setGameMode(cols, rows, runs, gravity, custom) {
 		// e null on restart
 		let mode;
-		let touch = (e ? e.type === 'touchend' : this.state.isTouch);
 
 		if (custom) {
 			mode = "create";
@@ -72,7 +70,6 @@ export default class Game extends React.Component {
 			runs: runs || this.state.runs,
 			gravity: gravity !== undefined ? gravity : this.state.gravity,
 			isPlaying: true,
-			isTouch: touch,
 			mode: mode,
 			multiplayer: copy
 		});
@@ -100,7 +97,7 @@ export default class Game extends React.Component {
 		}
 
 		return (
-			<div id="game" className={(this.state.mode) + (this.state.isTouch ? " touch" : "") + (this.state.multiplayer.enabled ? " multi" : "")}>
+			<div id="game" className={(this.state.mode) + (this.state.multiplayer.enabled ? " multi" : "")}>
 				<div className="bg"></div>
 				<Menu setGameMode={this.setGameMode.bind(this)} isPlaying={this.state.isPlaying} endGame={this.endGame.bind(this)} restart={this.restart.bind(this)} multiplayer={this.state.multiplayer.enabled} />
 				{board}
