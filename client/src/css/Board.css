@@ -66,11 +66,7 @@
 }
 
 .gravity:not(.done) .col:hover>.cell {
-	background-color: #eee;
-}
-
-.gravity:not(.done) .col:hover>.cell {
-	border-color: #eee;
+	background-color: #fff;
 }
 
 .cell>span {
@@ -95,7 +91,7 @@
 	background: #F00 !important;
 }
 
-#game.multi div:not(.turn) .col:hover .open:last-of-type, #game.multi div:not(.turn) #board:not(.gravity) .cell.open:hover, #game.multi div:not(.turn) .col:hover>.cell {
+#game.multi div:not(.turn) #board.gravity .col:hover .open:last-of-type, #game.multi div:not(.turn) #board:not(.gravity) .cell.open:hover, #game.multi div:not(.turn) #board.gravity:not(.done) .col:hover>.cell.open {
 	background: #FFF !important;
 }
 
