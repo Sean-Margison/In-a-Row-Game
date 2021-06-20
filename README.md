@@ -3,7 +3,7 @@
 A fully responsive online multiplayer web game using new technologies.
 
 <b>Purpose</b>: To learn new technologies and gain valuable experience.<br/>
-<b>Technologies</b>: React, Node.js, and Socket.io
+<b>Technologies</b>: React, Node.js, Socket.io, GitHub, Heroku
 
 Features: 
  - Online multiplayer using Socket.io and a custom queueing system.
