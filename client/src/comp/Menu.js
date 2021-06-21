@@ -29,7 +29,7 @@ export default class Menu extends React.Component {
 			return;
 		}
 
-		this.changeGame(this.state.cols, this.state.rows, this.state.runs, this.state.gravity);
+		this.changeGame(this.state.cols, this.state.rows, this.state.runs, this.state.gravity, true);
 	}
 
 	componentDidMount() { this.init(); }
