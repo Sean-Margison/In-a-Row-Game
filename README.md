@@ -16,6 +16,6 @@ Features:
  
  Details: 
  - Time to complete: ~20 hours
- - First experience working with React, Socket.io, or Heroku
+ - First experience working with React, Socket.io, and/or Heroku
 
 NOTE: This is a code demonstration and provided for review but it will not be actively maintained.
