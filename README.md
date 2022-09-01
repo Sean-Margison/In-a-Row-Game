@@ -15,6 +15,7 @@ Features:
  - Deployed on a single Heroku instance using the react build files which are generated during deployment.
  
  Details: 
- - Time to complete approximately 20 hours
+ - Time to complete: ~20 hours
+ - First experience working with React, Socket.io, or Heroku
 
 NOTE: This is a code demonstration and provided for review but it will not be actively maintained.
