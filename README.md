@@ -7,7 +7,8 @@ https://in-a-row-game.herokuapp.com/
  - React, Node.js, Socket.io, GitHub, Heroku
 
 Features: 
- - Online multiplayer using Socket.io and a custom queueing system.
+ - Online multiplayer utilizing Socket.io.
+ - Custom built multiplayer queuing system using Node.js.
  - Custom local games with configurable modifiers.
  - Fully responsive design to work on any screen size.
  - React handles all front-end interactions.
